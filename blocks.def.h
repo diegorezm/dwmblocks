@@ -4,5 +4,5 @@ static const Block blocks[] = {
 	{"  ", "$HOME/.config/dwmblocks/scripts/db-time.sh",					  20,		0},
 	{"", "$HOME/.config/dwmblocks/scripts/db-volume.sh",					20,		10},
 };
-static char delim[] = " | ";
+static char delim[] = "  ";
 static unsigned int delimLen = 5;
