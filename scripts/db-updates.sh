@@ -1,3 +1,4 @@
 #!/bin/bash 
 up=$(checkupdates | wc -l)
-echo $up
+echo $up  > /tmp/updates
+echo $(cat /tmp/updates)
