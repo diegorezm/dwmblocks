@@ -5,16 +5,8 @@ vol="$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) 
 # If muted, print 🔇 and exit.
 [ "$vol" != "${vol%\[MUTED\]}" ] && echo 🔇 && exit
 
-vol="${vol#Volume: }"
-
-split() {
-	# For ommiting the . without calling and external program.
-	IFS=$2
-	set -- $1
-	printf '%s' "$@"
-}
-
-vol="$(printf "%.0f" "$(split "$vol" ".")")"
+# Remove any decimal part by extracting the integer part of the volume
+vol="${vol%.*}"
 
 case 1 in
 	$((vol >= 70)) ) icon="🔊" ;;
@@ -23,4 +15,5 @@ case 1 in
 	* ) echo 🔇 && exit ;;
 esac
 
-echo "$icon$vol%"
+echo "^c#ea76cb^"$icon $vol% "^d^"
+
