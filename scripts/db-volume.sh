@@ -15,5 +15,5 @@ case 1 in
 	* ) echo 🔇 && exit ;;
 esac
 
-echo "^c#ea76cb^"$icon $vol% "^d^"
+echo "^c#ea76cb^"$icon $vol%"^d^"
 
