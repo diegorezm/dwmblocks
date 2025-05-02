@@ -1,4 +1,5 @@
 #!/bin/bash 
 up=$(checkupdates | wc -l)
 echo $up  > /tmp/updates
-echo "^c#94e2d5^"   $(cat /tmp/updates) "^d^"
+color=$(get_color "*color7")
+echo "^c$color^"   $(cat /tmp/updates) "^d^"

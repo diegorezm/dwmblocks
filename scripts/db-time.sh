@@ -1,3 +1,4 @@
 #!/bin/bash 
 time=$(date +%H:%M)
-echo "^c#f9e2af^" $time"^d^"
+color=$(get_color "*color4")
+echo "^c$color^" $time"^d^"
